@@ -11,7 +11,7 @@
     "format": "prettier --write . !public --ignore-path .gitignore"
   },
   "devDependencies": {
-    "@pinegrow/tailwindcss-plugin": "^3.0.18",
+    "@pinegrow/tailwindcss-plugin": "file:/Users/techakayy/Pinegrow/PinegrowCode/frameworks/vue-svelte-designer/packages/tailwindcss-plugin",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^20.14.10",
@@ -19,6 +19,7 @@
     "daisyui": "^4.12.10",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.22",
+    "postcss-cli": "^11.0.0",
     "prettier": "^2.8.4",
     "tailwindcss": "^3.3.1",
     "tailwindcss-animate": "^1.0.7"

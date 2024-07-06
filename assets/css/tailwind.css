@@ -1,11 +1,15 @@
+/* Pinegrow generated Design Panel Init Begin */
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600,700,900|Cabin:400,500,600,700&display=swap');
+
+/* Pinegrow generated Design Panel Init End */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-  .btn-blue {
-    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
-  }
+  /* .btn-primary {
+    @apply focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 flex-shrink-0 font-medium rounded-xl text-base gap-x-2 shadow-sm text-white dark:text-gray-900 bg-primary-500 hover:bg-primary-600 disabled:bg-primary-500 dark:bg-primary-400 dark:hover:bg-primary-500 dark:disabled:bg-primary-400 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-primary-500 dark:focus-visible:outline-primary-400 inline-flex items-center px-6 py-4;
+  } */
   /* .btn-yellow {
     @apply bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded;
   } */
@@ -44,3 +48,56 @@
     @apply text-black;
   }
 } */
+
+/* Pinegrow generated Design Panel Extra Rules Begin */
+
+/* Class styles components */
+@layer components {
+  h1 {
+    @apply font-bold mb-4 text-4xl tracking-tight sm:text-5xl md:text-5xl lg:text-6xl text-white;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-serif;
+}
+
+.poster {
+  z-index: 0;
+}
+
+.poster:before {
+  background-image: url(https://images.unsplash.com/photo-1584901723137-bde3633dc2c2?ixid=MnwyMDkyMnwwfDF8c2VhcmNofDE4OXx8ZnVybml0dXJlfGVufDB8fHx8MTYyNzMzMDA1MA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=2000&fit=max) !important;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  content: ' ';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+}
+
+body.poster:before {
+  position: fixed;
+}
+@media (min-width: 1440px),
+  (min-width: 992px) and (-webkit-min-device-pixel-ratio: 2),
+  (min-width: 992px) and (min-resolution: 192dpi) {
+  .poster:before {
+    background-image: url(https://images.unsplash.com/photo-1584901723137-bde3633dc2c2?ixid=MnwyMDkyMnwwfDF8c2VhcmNofDE4OXx8ZnVybml0dXJlfGVufDB8fHx8MTYyNzMzMDA1MA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=2000&fit=max) !important;
+  }
+}
+body,
+html {
+  min-height: 100vh;
+}
+
+/* Pinegrow generated Design Panel Extra Rules End */
