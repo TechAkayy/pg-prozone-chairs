@@ -1,6 +1,8 @@
 // const path = require('path')
 // const fs = require('fs')
 
+let twData
+
 function parseTwData({
   projectRoot,
   dependencyRoot,
@@ -56,7 +58,8 @@ function parseTwData({
         cssOutputPath,
         cssOutputMinify,
       })
-      .then((twData) => {
+      .then((_twData) => {
+        twData = _twData
         console.log({ ...twData, parserRoot })
         return { ...twData, parserRoot }
       })
@@ -76,4 +79,10 @@ parseTwData({
   cssPath: path.resolve(projectRoot, 'assets/css/tailwind.css'),
   cssOutputPath: path.resolve(projectRoot, 'styles/main.css'),
   // cssOutputMinify: true,
+})
+
+pinegrow.addEventHandler('on_project_closed', () => {
+  // To programmatically close the watcher on project close
+  twData?.state?.watcher?.fswatcher?.close()
+  console.log(`Watcher status: ${twData.state.watcher.fswatcher.closed}`)
 })

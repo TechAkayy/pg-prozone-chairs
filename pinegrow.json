@@ -254,6 +254,7 @@
   "active-design-provider": "tw",
   "open-pages": ["index.html"],
   "recent-classes": [
+    "text-red-800",
     "text-green-500",
     "text-green-200",
     "text-gray-100",

@@ -1,6 +1,8 @@
 const path = require('path')
 const fs = require('fs')
 
+let twData
+
 function parseTwData({
   projectRoot,
   dependencyRoot,
@@ -56,7 +58,8 @@ function parseTwData({
         cssOutputPath,
         cssOutputMinify,
       })
-      .then((twData) => {
+      .then((_twData) => {
+        twData = _twData
         console.log(twData.errors)
         return { ...twData, parserRoot }
       })
