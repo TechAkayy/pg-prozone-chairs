@@ -11,7 +11,7 @@
     "format": "prettier --write . !public --ignore-path .gitignore"
   },
   "devDependencies": {
-    "@pinegrow/tailwindcss-plugin": "file:/Users/techakayy/Pinegrow/PinegrowCode/frameworks/vue-svelte-designer/packages/tailwindcss-plugin",
+    "@pinegrow/tailwindcss-plugin": "^3.0.23",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^20.14.10",
