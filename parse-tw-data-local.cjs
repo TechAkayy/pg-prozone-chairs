@@ -6,6 +6,7 @@ function parseTwData({
   dependencyRoot,
   watchMode,
   postcss,
+  customPostCssPath,
   configPath,
   cssPath,
   cssOutputPath,
@@ -49,6 +50,7 @@ function parseTwData({
         // dependencyRoot, // Needed? check parser, it has a reference to it
         watchMode,
         postcss,
+        customPostCssPath,
         configPath,
         cssPath,
         cssOutputPath,
@@ -68,7 +70,8 @@ parseTwData({
   // projectRoot, // process.cwd()
   // dependencyRoot, // node_modules/@pinegrow/tailwindcss-plugin
   watchMode: true,
-  postcss: true,
+  // postcss: true, // Not sure how --post works with tailwind cli
+  // customPostCssPath: path.resolve(process.cwd(), 'postcss.config.js'), // Not sure how --post works with tailwind cli
   configPath: path.resolve(process.cwd(), 'tailwind.config.js'),
   cssPath: path.resolve(process.cwd(), 'assets/css/tailwind.css'),
   cssOutputPath: path.resolve(process.cwd(), 'styles/main.css'),
