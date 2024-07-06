@@ -1,0 +1,281 @@
+{
+  "files": {
+    "index.html": {
+      "frameworks": [
+        "pg-prozone-chairs",
+        "wordpress.pinegrow",
+        "pg.tw.lib",
+        "pg.asset.manager",
+        "pg.project.items",
+        "pg.code-validator",
+        "pg.tree.painter",
+        "pg.image.overlay",
+        "pg.css.grid",
+        "pg.svg.lib",
+        "pg.insight.events",
+        "tw.flowbite",
+        "tw",
+        "pg.html",
+        "pg.components"
+      ],
+      "last_page_width": 1440
+    },
+    "index2.html": {
+      "frameworks": [
+        "TWTemplate",
+        "pg.tw.lib",
+        "pg.insight.events",
+        "pg.css.grid",
+        "pg.image.overlay",
+        "pg.code-validator",
+        "pg.project.items",
+        "pg.asset.manager",
+        "tw",
+        "pg.html",
+        "pg.components"
+      ],
+      "last_page_width": 1024
+    },
+    "hero.html": {
+      "frameworks": [
+        "TWTemplate",
+        "pg.tw.lib",
+        "pg.asset.manager",
+        "pg.project.items",
+        "pg.code-validator",
+        "pg.insight.events",
+        "pg.image.overlay",
+        "pg.css.grid",
+        "tw",
+        "pg.html",
+        "pg.components"
+      ],
+      "last_page_width": 1400
+    },
+    "spalash.html": {
+      "frameworks": [
+        "TheBrightBridge_TW",
+        "pg.svg.lib",
+        "pg.insight.events",
+        "pg.tw.lib",
+        "pg.asset.manager",
+        "pg.project.items",
+        "pg.code-validator",
+        "pg.image.overlay",
+        "pg.css.grid",
+        "tw",
+        "pg.html",
+        "pg.components"
+      ],
+      "last_page_width": 1440
+    },
+    "splash.html": {
+      "frameworks": [
+        "TW",
+        "pg.tw.lib",
+        "pg.asset.manager",
+        "pg.project.items",
+        "pg.code-validator",
+        "pg.insight.events",
+        "pg.image.overlay",
+        "pg.css.grid",
+        "tw",
+        "pg.html",
+        "pg.components"
+      ],
+      "last_page_width": 1105.99
+    },
+    "index-2.html": {
+      "frameworks": [
+        "TW",
+        "pg.tw.lib",
+        "pg.asset.manager",
+        "pg.project.items",
+        "pg.code-validator",
+        "pg.insight.events",
+        "pg.image.overlay",
+        "pg.css.grid",
+        "tw",
+        "pg.html",
+        "pg.components"
+      ],
+      "last_page_width": 1440
+    },
+    "index-global-app.html": {
+      "frameworks": [
+        "pg-prozone-chairs",
+        "wordpress.pinegrow",
+        "pg.tw.lib",
+        "pg.asset.manager",
+        "pg.project.items",
+        "pg.code-validator",
+        "pg.image.overlay",
+        "pg.css.grid",
+        "pg.tree.painter",
+        "pg.svg.lib",
+        "pg.insight.events",
+        "tw.flowbite",
+        "tw",
+        "pg.html",
+        "pg.components"
+      ],
+      "last_page_width": 1440
+    },
+    "index-progressive-hydration-of-islands.html": {
+      "frameworks": [
+        "chairs",
+        "my-pg-snippets",
+        "pg.asset.manager",
+        "pg.tw.lib",
+        "pg.project.items",
+        "pg.code-validator",
+        "pg.image.overlay",
+        "pg.css.grid",
+        "pg.tree.painter",
+        "pg.svg.lib",
+        "pg.insight.events",
+        "tw",
+        "pg.html",
+        "pg.components"
+      ],
+      "last_page_width": 1440
+    },
+    "index-pikaday.html": {
+      "frameworks": [
+        "chairs",
+        "my-pg-snippets",
+        "pg.asset.manager",
+        "pg.project.items",
+        "pg.tw.lib",
+        "pg.code-validator",
+        "pg.image.overlay",
+        "pg.css.grid",
+        "pg.tree.painter",
+        "pg.svg.lib",
+        "pg.insight.events",
+        "tw",
+        "pg.html",
+        "pg.components"
+      ],
+      "last_page_width": 1440
+    },
+    "index-islands.html": {
+      "frameworks": [
+        "chairs",
+        "pg.tree.painter",
+        "pg.tw.lib",
+        "pg.svg.lib",
+        "pg.insight.events",
+        "pg.css.grid",
+        "pg.image.overlay",
+        "pg.code-validator",
+        "pg.project.items",
+        "pg.asset.manager",
+        "tw",
+        "pg.html",
+        "pg.components"
+      ]
+    },
+    "index-vanila.html": {
+      "frameworks": [
+        "chairs",
+        "pg.tree.painter",
+        "pg.tw.lib",
+        "pg.svg.lib",
+        "pg.insight.events",
+        "pg.css.grid",
+        "pg.image.overlay",
+        "pg.code-validator",
+        "pg.project.items",
+        "pg.asset.manager",
+        "tw",
+        "pg.html",
+        "pg.components"
+      ]
+    }
+  },
+  "breakpoints": [
+    "640px",
+    "768px",
+    "992px",
+    "1024px",
+    "1280px",
+    "1440px",
+    "1536px"
+  ],
+  "frameworks": [
+    "pg-prozone-chairs",
+    "wordpress.pinegrow",
+    "pg.tw.lib",
+    "pg.asset.manager",
+    "pg.project.items",
+    "pg.code-validator",
+    "pg.tree.painter",
+    "pg.image.overlay",
+    "pg.css.grid",
+    "pg.svg.lib",
+    "pg.insight.events",
+    "tw.flowbite",
+    "tw",
+    "pg.html",
+    "pg.components"
+  ],
+  "template_framework_id": "pg.tw.lib",
+  "urls": {
+    "index.html": {
+      "open-page-views": [{ "w": 640, "h": 0 }],
+      "open-with-wrapper": false
+    },
+    "index2.html": { "open-page-views": [{ "w": 1024, "h": 0 }] },
+    "hero.html": { "open-page-views": [{ "w": 1400, "h": 0 }] },
+    "splash.html": { "open-page-views": [{ "w": 1106, "h": 0 }] },
+    "index-2.html": { "open-page-views": [{ "w": 1440, "h": 0 }] },
+    "index-global-app.html": {
+      "open-with-wrapper": false,
+      "open-page-views": [{ "w": 640, "h": 0 }]
+    },
+    "index-progressive-hydration-of-islands.html": {
+      "open-with-wrapper": false,
+      "open-page-views": [{ "w": 733.997, "h": 0 }]
+    },
+    "index-pikaday.html": {
+      "open-with-wrapper": false,
+      "open-page-views": [{ "w": 768, "h": 0 }]
+    },
+    "index-islands.html": {
+      "open-with-wrapper": false,
+      "open-page-views": [{ "w": 768, "h": 0 }]
+    },
+    "index-vanila.html": {
+      "open-with-wrapper": false,
+      "open-page-views": [{ "w": 768, "h": 0 }]
+    }
+  },
+  "active-design-provider": "tw",
+  "open-pages": ["index.html"],
+  "recent-classes": [
+    "text-white",
+    "text-yellow-400",
+    "sm:text-blue-500",
+    "relative",
+    "text-sm",
+    "text-red-700",
+    "hover:text-primary-500",
+    "ring-shadow-0",
+    "ring-accent",
+    "ring-current",
+    "border-0",
+    "ring-0",
+    "outline-white",
+    "disabled:bg-primary-200",
+    "w-56",
+    "p-2",
+    "hover:bg-primary-700",
+    "bg-primary-600",
+    "py-8",
+    "font-serif"
+  ],
+  "use-shortform-for-prop-binder": false,
+  "auto-reload-on-update": true,
+  "framework_directives": "petite-vue"
+}
