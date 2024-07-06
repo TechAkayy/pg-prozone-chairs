@@ -84,5 +84,5 @@ parseTwData({
 pinegrow.addEventHandler('on_project_closed', () => {
   // To programmatically close the watcher on project close
   twData?.state?.watcher?.fswatcher?.close()
-  console.log(`Watcher status: ${twData.state.watcher.fswatcher.closed}`)
+  console.log(`Watcher close status - ${twData.state.watcher.fswatcher.closed}`)
 })
