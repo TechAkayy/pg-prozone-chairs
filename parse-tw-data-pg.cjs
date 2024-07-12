@@ -3,14 +3,14 @@
 
 $(function () {
   $('body').one('pinegrow-ready', function (e, pinegrow) {
-    nw.Window.get().showDevTools()
+    // nw.Window.get().showDevTools()
     var framework = new PgFramework(
       'internal-external-tw-builder',
       'Internal External Tw Builder',
     )
     pinegrow.addFramework(framework, 3)
     console.log(
-      `Internal External Tailwind CSS Build plugin loaded successfully!`,
+      `Internal External Tailwind CSS Build plugin: Loaded successfully!`,
     )
 
     let twData, _projectRoot
@@ -76,7 +76,7 @@ $(function () {
           .then((twData) => {
             if (twData) {
               // console.log(twData)
-
+              framework.twData = twData
               try {
                 const usedClassesFilePath = path.resolve(
                   projectRoot,
@@ -118,7 +118,7 @@ $(function () {
               twData.logs?.forEach((log) => {
                 if (log.type === 'error') {
                   console.log(
-                    `Internal External Build plugin: An error occurred!`,
+                    `Internal External Tailwind CSS Build plugin: An error occurred!`,
                   )
                 }
                 log.logMessage && console.log(log.logMessage)
@@ -171,10 +171,13 @@ $(function () {
       }
 
       // To programmatically close the watcher & remove context on project close
-      if (twData?.destroy && typeof twData.destroy === 'function') {
-        twData.destroy().then((finalWords) => {
+      if (
+        framework.twData?.destroy &&
+        typeof framework.twData.destroy === 'function'
+      ) {
+        framework.twData.destroy().then((finalWords) => {
           console.log(
-            `${pluginName}: Stopped plugin activity, such as file watchers, etc.`,
+            `Internal External Tailwind CSS Build plugin: Stopped plugin activity, such as file watchers, etc.`,
           )
           finalWords && console.log(finalWords)
         })

@@ -13,7 +13,7 @@
     "format": "prettier --write . !public --ignore-path .gitignore !styles/main.css"
   },
   "devDependencies": {
-    "@pinegrow/tailwindcss-plugin": "^3.0.23",
+    "@pinegrow/tailwindcss-plugin": "^3.0.27",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^20.14.10",
