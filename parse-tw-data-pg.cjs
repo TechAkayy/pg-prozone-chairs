@@ -175,12 +175,17 @@ $(function () {
         framework.twData?.destroy &&
         typeof framework.twData.destroy === 'function'
       ) {
-        framework.twData.destroy().then((finalWords) => {
-          console.log(
-            `Internal External Tailwind CSS Build plugin: Stopped plugin activity, such as file watchers, etc.`,
-          )
+        console.log(
+          `Internal External Tailwind CSS Build plugin: Stopped plugin activity, such as file watchers, etc.`,
+        )
+        try {
+          framework.twData
+            .destroy()
+            .then((finalWords) => finalWords && console.log(finalWords))
+        } catch (err) {
+          const finalWords = framework.twData.destroy()
           finalWords && console.log(finalWords)
-        })
+        }
       }
     }
 
