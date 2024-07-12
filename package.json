@@ -7,8 +7,10 @@
     "url": "https://github.com/techakayy/pg-prozone-chairs.git"
   },
   "scripts": {
+    "build": "npx tailwindcss -i assets/css/tailwind.css -o styles/main.css --config tailwind.config.js --postcss --minify",
     "lighthouse": "npx unlighthouse --no-cache --site https://pg-prozone-chairs.netlify.app",
-    "format": "prettier --write . !public --ignore-path .gitignore"
+    "lint": "npm run format",
+    "format": "prettier --write . !public --ignore-path .gitignore !styles/main.css"
   },
   "devDependencies": {
     "@pinegrow/tailwindcss-plugin": "^3.0.23",
