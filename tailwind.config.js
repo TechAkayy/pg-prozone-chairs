@@ -204,14 +204,15 @@ export default {
   get content() {
     let _content = [
       './index.html',
-      './src/**/*.{html,vue,svelte,astro,js,cjs,ts,cts,mts,jsx,tsx,md,mdx}',
+      './src/**/*.{html,vue,svelte,astro,js,cjs,mjs,ts,cts,mts,jsx,tsx,md,mdx}',
+      '!./node_modules',
     ]
     return {
       relative: true,
       files:
         process.env.NODE_ENV === 'production'
           ? _content
-          : [..._content, './_pginfo/**/*.{html,js}'], // used by Vue Desginer for live-designing during development,
+          : [..._content, './_pginfo/**/*.{html,js}'], // used by Pinegrow for live-designing during development
     }
   },
 }

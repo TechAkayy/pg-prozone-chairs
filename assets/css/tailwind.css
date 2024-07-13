@@ -54,7 +54,7 @@
 /* Class styles components */
 @layer components {
   h1 {
-    @apply font-bold mb-4 text-4xl tracking-tight sm:text-5xl md:text-5xl lg:text-6xl;
+    @apply font-bold mb-4 text-4xl tracking-tight sm:text-5xl md:text-5xl lg:text-6xl text-white;
   }
 }
 
