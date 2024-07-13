@@ -23,7 +23,7 @@
     </dmdesigns>     
     <dmlocked tw-colors-gray="true" tw-colors-red="true" tw-colors-yellow="true" tw-colors-green="true" tw-colors-blue="true" tw-colors-indigo="true" tw-colors-purple="true" tw-colors-pink="true" background-image="false" fonts-family_1="false" fonts-family_2="false"></dmlocked>     
     <classstyles> 
-        <classstyle name="h1" key="h1" class="font-bold mb-4 text-4xl tracking-tight sm:text-5xl md:text-5xl lg:text-6xl text-white" expanded component states="" count="6"></classstyle>         
+        <classstyle name="h1" key="h1" class="font-bold mb-4 text-4xl tracking-tight sm:text-5xl md:text-5xl lg:text-6xl text-yellow-200" expanded component states="" count="6"></classstyle>         
         <deleted key="test.subtest" class=""></deleted>         
         <deleted key="test" leave-classes class=""></deleted>         
         <classstyle name="myclass" key="myclass" class="" expanded></classstyle>         

@@ -13,7 +13,6 @@
         "pg.css.grid",
         "pg.insight.events",
         "pg.svg.lib",
-        "internal-external-tw-builder",
         "tw.flowbite",
         "tw",
         "pg.html",
@@ -216,7 +215,6 @@
     "pg.css.grid",
     "pg.insight.events",
     "pg.svg.lib",
-    "internal-external-tw-builder",
     "tw.flowbite",
     "tw",
     "pg.html",
@@ -256,6 +254,8 @@
   "active-design-provider": "tw",
   "open-pages": ["index.html"],
   "recent-classes": [
+    "text-yellow-200",
+    "text-pink-600",
     "btn-primary",
     "btn-accent",
     "btn-error",
@@ -306,11 +306,12 @@
   "class-styles-components": "1",
   "design-settings": {
     "mode": "external",
-    "external_source_url": "file:///Users/techakayy/Projects/pg/tailwindcss/pg-prozone-chairs/assets/css/tailwind.css",
+    "external_source_url": "assets/css/tailwind.css",
     "custom_config": null,
     "add_setting": null,
     "custom_source_url": null,
     "disable_preflight": null,
     "external_help": null
-  }
+  },
+  "automatictwcssbuilder": true
 }

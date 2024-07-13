@@ -64,7 +64,7 @@ $(function () {
         2. If you are running tailwind-cli or postcss-cli externally from a terminal, you no longer need to do this when using this plugin.<br><br>
         3. To activate this plugin, open your Tailwind CSS project, ensure the Design Panel is active and configured for the "external" build. Then, use the menu <b>Tailwind CSS / Run Setup</b> and follow the instructions.
         <br><br><br>
-        <b>IMPORTANT:</b> The external build lets you use Tailwind CSS plugins such as DaisyUI, Flowbite, etc., and enables advanced customizations of your Tailwind CSS configuration.
+        <b>IMPORTANT:</b> The external build lets you use Tailwind CSS plugins such as DaisyUI, Flowbite, etc., (non-cdn, unused classes are treeshaken) and enables advanced customizations of your Tailwind CSS configuration.
         <br><br> 
         If you don't require these advanced capabilities, it's best to use the internal compiler that comes with Pinegrow's Tailwind CSS Addon. Therefore, once you start using the external build, switching back to the internal compiler is not recommended unless you do not use these advanced capabilities.
         <br><br>
@@ -136,6 +136,9 @@ $(function () {
             helptext:
               'Run validations to prepare your Tailwind CSS project for automatic external build.',
             action: function () {
+              if (!dp) {
+                showNotExternalBuildMsg()
+              }
               const isExternalBuild = dp.settings.mode === 'external'
 
               if (isExternalBuild) {
