@@ -368,7 +368,7 @@ $(function () {
                 resolve(cssPath)
               } else {
                 pinegrow.showAlert(
-                  `Your CSS file ${dpSettingsExternalSourceUrl} doesn't include the required Tailwind CSS directives.
+                  `Your CSS Source file ${dpSettingsExternalSourceUrl} doesn't include the required Tailwind CSS directives.
                   <br><br>
                   Ensure that the following directives are added like below. <b>IMPORTANT:</b> After updating it, ${reRunMsg}
                   <br><br>
@@ -377,7 +377,7 @@ $(function () {
                   @tailwind components;<br>
                   @tailwind utilities;<br>
                   </code>`,
-                  `<b>${fxName}</b>: Tailwind CSS File Issue!`,
+                  `<b>${fxName}</b>: Tailwind CSS Source file Issue!`,
                   null,
                   'Okay',
                   null,
@@ -436,7 +436,7 @@ $(function () {
             `A minimal CSS Source file containing Tailwind CSS directives was automatically created at your project root as no file was configured in your Design Panel.
             <br><br>
             The same file was also automatically configured as the Source File in your Design Panel. Please verify!`,
-            `<b>${fxName}</b>: Minimal CSS file auto-generated!`,
+            `<b>${fxName}</b>: Minimal CSS Source file auto-generated!`,
             null,
             'Okay',
             null,
@@ -465,14 +465,10 @@ $(function () {
               packageJsonData = JSON.parse(packageJsonData) || {}
             } catch (err) {
               console.log(err)
-
-              copyCodeToClipboard(installCmd.replaceAll('<br>', '\n'))
               pinegrow.showAlert(
                 `Invalid <code>package.json</code> detected, ensure it's a valid JSON file! 
                 <br><br>
-                <b>IMPORTANT:</b> After updating, ${reRunMsg}
-                <br><br>
-                <code>${installCmd}</code>`,
+                <b>IMPORTANT:</b> After updating, ${reRunMsg}`,
                 `<b>${fxName}</b>: Invalid package.json!`,
                 null,
                 'Okay',
@@ -481,6 +477,7 @@ $(function () {
                   // 4. package.json must be valid
                   reject(`${fxName}: package.json validation failed!`),
               )
+              return
             }
 
             let installCmd
@@ -827,7 +824,7 @@ $(function () {
                 null,
                 () =>
                   // 10. postcss config file must have the required plugins
-                  reject(`${fxName}: Post CSS File validation failed!`),
+                  reject(`${fxName}: Post CSS config file validation failed!`),
               )
               return
             }
