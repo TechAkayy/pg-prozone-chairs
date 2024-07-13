@@ -814,14 +814,14 @@ $(function () {
                 Ensure that <b>tailwindcss</b> and <b>autoprefixer</b> plugins are added like below. <b>IMPORTANT:</b> After updating it, ${reRunMsg}
                 <br><br>
                 <code>
-                &nbsp;module.exports = {
-                  &nbsp;&nbsp;&nbsp;plugins: {
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tailwindcss: {},
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;autoprefixer: {},
-                  &nbsp;&nbsp;&nbsp;},
+                &nbsp;module.exports = {<br>
+                  &nbsp;&nbsp;&nbsp;plugins: {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tailwindcss: {},<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;autoprefixer: {},<br>
+                  &nbsp;&nbsp;&nbsp;},<br>
                 }
                 </code>`,
-                `<b>${fxName}</b>: Tailwind Config Content Array Issue!`,
+                `<b>${fxName}</b>: Post CSS Config Issue!`,
                 null,
                 'Okay',
                 null,
