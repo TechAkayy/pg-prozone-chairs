@@ -504,7 +504,7 @@ $(function () {
               !tailwindcssExistsInPackageJson
             ) {
               installCmd = `cd "${projectRoot}"<br>
-                  npm install tailwindcss@3`
+                  npm install -D tailwindcss@3`
             }
 
             if (
@@ -519,7 +519,7 @@ $(function () {
             ) {
               installCmd = `${
                 installCmd ? '<br>' : `cd "${projectRoot}"<br>`
-              }npm install @pinegrow/tailwindcss-plugin@latest`
+              }npm install -D @pinegrow/tailwindcss-plugin@latest`
             }
 
             if (!installCmd) {
