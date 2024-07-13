@@ -52,7 +52,7 @@ $(function () {
       autoWatchBuildOnProjectOpen = false
 
     const $menu = $(`
-      <li id="automatic-tailwind-builder" class="aadropdown menu-${fxKey}">
+      <li id="automatic-twcss-builder" class="aadropdown menu-${fxKey}">
           <a href="#" class="aadropdown-toggle" data-toggle="aadropdown"><span>Tailwind CSS</span></a>
       </li>
       `)
@@ -64,7 +64,7 @@ $(function () {
         2. If you are running tailwind-cli or postcss-cli externally from a terminal, you no longer need to do this when using this plugin.<br><br>
         3. To activate this plugin, open your Tailwind CSS project, ensure the Design Panel is active and configured for the "external" build. Then, use the menu <b>Tailwind CSS / Run Setup</b> and follow the instructions.
         <br><br><br>
-        <b>IMPORTANT:</b> The external build lets you use Tailwind CSS plugins such as DaisyUI, Flowbite, etc., (non-cdn, unused classes are treeshaken) and enables advanced customizations of your Tailwind CSS configuration.
+        <b>IMPORTANT:</b> The external build lets you use Tailwind CSS plugins such as DaisyUI, Flowbite, etc. (non-CDN npm way; unused classes are tree-shaken when built) and enables advanced customizations of your Tailwind CSS configuration.
         <br><br> 
         If you don't require these advanced capabilities, it's best to use the internal compiler that comes with Pinegrow's Tailwind CSS Addon. Therefore, once you start using the external build, switching back to the internal compiler is not recommended unless you do not use these advanced capabilities.
         <br><br>
@@ -179,7 +179,7 @@ $(function () {
           } else {
             menu.add({
               label: `Start Build`,
-              helptext: 'Start Tailwind CSS Builder in Watch mode.',
+              helptext: 'Start Tailwind CSS builder in watch mode.',
               action: function () {
                 startBuild()
               },
@@ -189,15 +189,15 @@ $(function () {
           menu.add({
             label: `Auto Start Build`,
             helptext:
-              'Automatically Start the Builder in Watch mode when a Tailwind CSS project using external build mode is opened.',
+              'Automatically Start the builder in watch mode when a Tailwind CSS project using external build mode is opened.',
             check: function () {
               return !!autoWatchBuildOnProjectOpen
             },
             action: function () {
               autoWatchBuildOnProjectOpen = !autoWatchBuildOnProjectOpen
               const alertMsg = autoWatchBuildOnProjectOpen
-                ? `You have <b>turned on</b> Auto-Start. Next time a Tailwind CSS project that's activated with this plugin is opened in Pinegrow, the Builder will automatically start in Watch mode.`
-                : `You have <b>turned off</b> Auto-Start. Use the <b>Start Build</b> menu to manually start the Builder in Watch mode after opening your project.`
+                ? `You have <b>turned on</b> Auto-Start. Next time a Tailwind CSS project that's activated with this plugin is opened in Pinegrow, the builder will automatically start in watch mode.`
+                : `You have <b>turned off</b> Auto-Start. Use the <b>Start Build</b> menu to manually start the builder in watch mode after opening your project.`
               pinegrow.showAlert(
                 `${alertMsg} 
                 <br><br>
@@ -231,7 +231,7 @@ $(function () {
           menu.add({
             label: `Reset alert preference`,
             helptext:
-              'Show confirmation alert when Builder has started in Watch mode! Quick alert will be displayed otherwise.',
+              'Show confirmation alert when builder has started in watch mode! Quick alert will be displayed otherwise.',
             action: function () {
               pinegrow.setSetting(settingKey_build_watch_started, null)
             },
