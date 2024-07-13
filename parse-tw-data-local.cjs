@@ -77,6 +77,6 @@ parseTwData({
   // customPostCssPath: path.resolve(process.cwd(), 'postcss.config.js'), // Not sure how --post works with tailwind cli
   configPath: path.resolve(process.cwd(), 'tailwind.config.js'),
   cssPath: path.resolve(process.cwd(), 'assets/css/tailwind.css'),
-  cssOutputPath: path.resolve(process.cwd(), 'styles/main.css'),
+  cssOutputPath: path.resolve(process.cwd(), 'tailwind_theme/tailwind.css'),
   // cssOutputMinify: true,
 })
