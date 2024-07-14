@@ -18,9 +18,77 @@ $(function () {
       return true
     }
 
-    const fxKey = 'automatictwcssbuilder'
-    const fxName = 'Automatic Tailwind CSS Builder'
-    var framework = new PgFramework(fxKey, fxName)
+    var fxConfig = {
+      version: '1.0.0',
+      major_version: '1',
+      minor_version: '1.0',
+
+      //Optional, add a badge to the framework list notify user of new or updated status
+      info_badge: 'New',
+
+      // Define a framework type - if you plan on having multiple versions, this should be the same for each version.
+
+      type: 'automatic-tailwindcss-builder',
+      short_type: 'automatictwcssbuilder',
+      //Prevent the activation of multiple versions of the framework - if this should be allowed, change to false
+      allow_single_type: true,
+
+      short_name: 'Automatic Tailwind CSS Builder',
+
+      dependency: '@techakayy/automatic-tailwindcss-builder',
+
+      get name() {
+        return `${this.short_name} ${this.minor_version}`
+      },
+
+      get key() {
+        return `${this.type}`
+      },
+
+      // shouldn't contain /, for eg, @nuxt/ui
+      get scriptTagId() {
+        return `${this.short_type}`
+      },
+
+      get prefix() {
+        return `${this.short_type}${this.minor_version}`
+      },
+
+      //Add a framework description to be displayed with the framework templates
+      get description() {
+        return `<a href="http://github.com/techakayy/automatic-tailwindcss-builder">${this.name}</a>.`
+      },
+
+      //Add a framework author to be displayed with the framework templates
+      author: 'Ahmed Kaja',
+
+      //Add a website "https://techakayy.com" or mailto "mailto:info@techakayy.com" link for redirect on author name click
+      author_link: 'http://github.com/techakayy/automatic-tailwindcss-builder',
+      video_tutorial:
+        'https://github.com/techakayy/automatic-tailwindcss-builder#automatic-tailwindcss-builder---a-community-plugin',
+
+      show_in_manager: true,
+      get default() {
+        return (this.pgf_type && this.pgf_type.activated_by_default) || false
+      },
+    }
+
+    const fxKey = fxConfig.key
+    const fxName = fxConfig.name
+    var framework = new PgFramework({
+      key: fxKey,
+      name: fxName,
+    })
+    framework.type = fxConfig.type
+    framework.allow_single_type = fxConfig.allow_single_type
+    framework.description = fxConfig.description
+    framework.author = fxConfig.author
+    framework.author_link = fxConfig.author_link
+    framework.info_badge = fxConfig.info_badge
+    framework.default = fxConfig.default
+    framework.show_in_manager = fxConfig.show_in_manager
+    pinegrow.addFramework(framework, 3)
+
     pinegrow.addFramework(framework, 3)
     console.log(`${fxName}: Loaded successfully!`)
 
@@ -44,8 +112,8 @@ $(function () {
       settingKey_welcome_shown,
     )
 
-    const settingKey_build_watch_started = `${fxKey}_build_watch_started`
-    let settingVal_build_watch_started
+    const settingKey_build_watch_started_notification = `${fxKey}_build_watch_started_notification`
+    let settingVal_build_watch_started_notification
 
     // Menu
     let isSetupValid = false,
@@ -60,15 +128,17 @@ $(function () {
     const showWelcomeMsg = () => {
       const alertMsg = `
         Here are some helpful tips:<br><br>
-        1. This plugin works only within Tailwind CSS projects (Pinegrow Pro) configured to use the "external" build via the Design Panel. <br><br>
-        2. If you are running tailwind-cli or postcss-cli externally from a terminal, you no longer need to do this when using this plugin.<br><br>
-        3. To activate this plugin, open your Tailwind CSS project, ensure the Design Panel is active and configured for the "external" build. Then, use the menu <b>Tailwind CSS / Run Setup</b> and follow the instructions.
+        1. This plugin works only within Tailwind CSS projects (Pinegrow Pro) configured to use the "external" build via the Design Panel.
+        <br><br>
+        2. If you are running tailwind-cli or postcss-cli externally in watch mode from a terminal, you no longer need to do this when using this plugin. You only need to use the external terminal to install npm dependencies and to run the build command before going to production.
+        <br><br>
+        3. To activate this plugin, open your Tailwind CSS project and ensure the Design Panel is active and configured for the "external" build. Then, use the menu <b>Tailwind CSS / Run Setup</b> and follow the instructions. Activation of the plugin is done on a per-project basis, so you can ignore this plugin for any projects using the internal compiler that comes with Pinegrow's Tailwind CSS Addon.
         <br><br><br>
         <b>IMPORTANT:</b> The external build lets you use Tailwind CSS plugins such as DaisyUI, Flowbite, etc. (non-CDN npm way; unused classes are tree-shaken when built) and enables advanced customizations of your Tailwind CSS configuration.
         <br><br> 
-        If you don't require these advanced capabilities, it's best to use the internal compiler that comes with Pinegrow's Tailwind CSS Addon. Therefore, once you start using the external build, switching back to the internal compiler is not recommended unless you do not use these advanced capabilities.
+        If you don't require these advanced capabilities, it's best to stick to the internal compiler that comes with Pinegrow's Tailwind CSS Addon. Therefore, once you start using the external build, switching back to the internal compiler is not recommended unless you do not use these advanced capabilities.
         <br><br>
-        <b>Disclaimer</b>: This plugin is free and open-source. It is provided "as-is" without any warranties or guarantees. Use it at your own risk. Also, note that Pinegrow plugins such as this one are only for the desktop app and are not applicable for the Pinegrow WP plugin or Pinegrow Online.`
+        <b>Disclaimer</b>: This plugin is free and open-sourced - <a class="external" href="${fxConfig.author_link}">Github Repo</a>. It is provided "as-is" without any warranties or guarantees. Use it at your own risk. Also, note that Pinegrow plugins such as this one are only for the desktop app and are not applicable for the Pinegrow WP plugin or Pinegrow Online.`
 
       pinegrow.setSetting(settingKey_welcome_shown, true)
       pinegrow.showAlert(alertMsg, `Welcome to ${fxName} plugin`, null, 'Okay')
@@ -233,7 +303,10 @@ $(function () {
             helptext:
               'Show confirmation alert when builder has started in watch mode! Quick alert will be displayed otherwise.',
             action: function () {
-              pinegrow.setSetting(settingKey_build_watch_started, null)
+              pinegrow.setSetting(
+                settingKey_build_watch_started_notification,
+                null,
+              )
             },
           })
         }
@@ -938,10 +1011,11 @@ $(function () {
                 <br><br>
                 Re-open your pages if this is the first time you are using this plugin in this project (if you notice page styles not getting applied correctly).`
 
-                settingVal_build_watch_started = pinegrow.getSetting(
-                  settingKey_build_watch_started,
-                )
-                if (!settingVal_build_watch_started) {
+                settingVal_build_watch_started_notification =
+                  pinegrow.getSetting(
+                    settingKey_build_watch_started_notification,
+                  )
+                if (!settingVal_build_watch_started_notification) {
                   pinegrow.showAlert(
                     alertMsg,
                     `<b>${fxName}</b>: Build Started In Watch Mode`,
@@ -949,14 +1023,16 @@ $(function () {
                     'Close',
                     () => {
                       pinegrow.setSetting(
-                        settingKey_build_watch_started,
+                        settingKey_build_watch_started_notification,
                         'quick',
                       )
-                      settingVal_build_watch_started = 'quick'
+                      settingVal_build_watch_started_notification = 'quick'
                     },
                     null,
                   )
-                } else if (settingVal_build_watch_started === 'quick') {
+                } else if (
+                  settingVal_build_watch_started_notification === 'quick'
+                ) {
                   setTimeout(() => {
                     pinegrow.showQuickMessage(
                       `<b>${fxName}</b>: Build started in watch mode, class list refreshed!`,
